@@ -41,13 +41,18 @@ function BookList() {
   return (
     <div className="container mt-5">
       <h1 className="text-center mb-4">Book List</h1>
-      <div className="d-flex justify-content-between mb-3">
-        <Link to="/add" className="btn btn-success">Add New Book</Link>
+      <div className="d-flex justify-content-between mb-3 flex-column flex-sm-row">
+        <Link to="/add" className="btn btn-success w-100 w-sm-auto mb-2 mb-sm-0">
+          Add New Book
+        </Link>
       </div>
       <ul className="list-group">
         {books.map((book) => (
-          <li key={book.id} className="list-group-item d-flex justify-content-between align-items-center">
-            <span>{book.titulo} </span>
+          <li
+            key={book.id}
+            className="list-group-item d-flex justify-content-between align-items-center mb-2"
+          >
+            <span>{book.titulo}</span>
             <div>
               <Link className="btn btn-primary btn-sm me-2" to={`/books/${book.id}`}>
                 Details

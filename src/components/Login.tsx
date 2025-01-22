@@ -27,7 +27,14 @@ function Login({ setToken }: LoginProps) {
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
-      <form onSubmit={handleLogin} className="w-50 p-4 shadow rounded bg-light">
+      <form
+        onSubmit={handleLogin}
+        className="w-100 w-sm-75 w-md-50 w-lg-25 p-4 shadow rounded bg-light"
+        style={{
+          maxWidth: "400px", // Limitar el tamaño en PC
+          height: "400px", // Aseguramos que el formulario sea cuadrado
+        }}
+      >
         <h2 className="text-center mb-4">Login</h2>
         {error && <p className="text-danger text-center">{error}</p>}
         <div className="mb-3">
