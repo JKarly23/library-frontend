@@ -10,7 +10,7 @@ import SearchBooks from "./components/SearchBooks";
 import UpdateBookForm from "./components/BookFormUpdate";
 
 function App() {
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState<string | null>(null);
 
   // Al montar el componente, recuperar el token del localStorage
   useEffect(() => {
@@ -21,8 +21,8 @@ function App() {
   }, []);
 
   // Función para guardar el token en el localStorage cuando el usuario inicie sesión
-  const handleSetToken = (newToken) => {
-    localStorage.setItem("token", newToken);
+  const handleSetToken = (newToken: string | null) => {
+    if(newToken) localStorage.setItem("token", newToken);
     setToken(newToken);
   };
 

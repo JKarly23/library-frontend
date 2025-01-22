@@ -59,13 +59,13 @@ function BookForm() {
     }
 
     // Verificar que precio y stock sean números
-    if (isNaN(precio) || isNaN(stock)) {
+    if (isNaN(Number(precio)) || isNaN(Number(stock))) {
       setError("Precio y Stock deben ser números.");
       return;
-    }
+  }
 
     try {
-      const response = await axios.post(
+      await axios.post(
         "https://library-api-ee6k.onrender.com/books/",
         { titulo, autor, fechaPublicacion, precio, stock, categoria }, // Ahora se envía el nombre de la categoría
         {
@@ -75,7 +75,7 @@ function BookForm() {
         }
       );
       navigate("/"); // Redirigir después de crear el libro
-    } catch (err) {
+    } catch (err: any) {
       setError("Error creating book. Please try again.");
       console.error(err.response?.data); // Verifica el error detallado aquí
     }
