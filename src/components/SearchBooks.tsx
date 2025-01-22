@@ -41,7 +41,7 @@ function SearchBooks() {
 
     // Realizar la solicitud GET con los filtros
     axios
-      .get(`http://localhost:3003/books${searchParams}`, {
+      .get(`https://library-api-ee6k.onrender.com/books${searchParams}`, {
         headers: {
           Authorization: `Bearer ${token}`, // Incluir el token en las cabeceras
         },

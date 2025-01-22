@@ -11,7 +11,7 @@ function BookList() {
   useEffect(() => {
     if (token) {
       axios
-        .get("http://localhost:3003/books/", {
+        .get("https://library-api-ee6k.onrender.com/books/", {
           headers: {
             Authorization: `Bearer ${token}`,  // Envía el token en las cabeceras
           },
@@ -26,7 +26,7 @@ function BookList() {
   const deleteBook = (id: number) => {
     if (token) {
       axios
-        .delete(`http://localhost:3003/books/${id}`, {
+        .delete(`https://library-api-ee6k.onrender.com/books/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,  // Envía el token para eliminar
           },
@@ -47,7 +47,7 @@ function BookList() {
       <ul className="list-group">
         {books.map((book) => (
           <li key={book.id} className="list-group-item d-flex justify-content-between align-items-center">
-            <span>{book.titulo} by {book.autor}</span>
+            <span>{book.titulo} </span>
             <div>
               <Link className="btn btn-primary btn-sm me-2" to={`/books/${book.id}`}>
                 Details

@@ -22,7 +22,7 @@ function BookForm() {
     }
 
     axios
-      .get("http://localhost:3003/books/get/categories", {
+      .get("https://library-api-ee6k.onrender.com/books/get/categories", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -66,7 +66,7 @@ function BookForm() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3003/books/",
+        "https://library-api-ee6k.onrender.com/books/",
         { titulo, autor, fechaPublicacion, precio, stock, categoria }, // Ahora se envía el nombre de la categoría
         {
           headers: {

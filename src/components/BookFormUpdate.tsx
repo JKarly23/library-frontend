@@ -26,7 +26,7 @@ function UpdateBookForm() {
     }
 
     // Obtener las categorías desde el backend
-    axios.get("http://localhost:3003/books/get/categories", {
+    axios.get("https://library-api-ee6k.onrender.com/books/get/categories", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -51,7 +51,7 @@ function UpdateBookForm() {
     }
 
     axios
-      .get(`http://localhost:3003/books/${id}`, {
+      .get(`https://library-api-ee6k.onrender.com/books/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -84,7 +84,7 @@ function UpdateBookForm() {
 
     try {
       await axios.patch(
-        `http://localhost:3003/books/${id}`,
+        `https://library-api-ee6k.onrender.com/books/${id}`,
         {
           titulo: book.titulo,
           autor: book.autor,

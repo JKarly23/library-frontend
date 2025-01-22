@@ -19,7 +19,7 @@ function BookDetails() {
 
     // Hacer la solicitud GET para obtener los detalles del libro
     axios
-      .get(`http://localhost:3003/books/${id}`, {
+      .get(`https://library-api-ee6k.onrender.com/books/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`, // Incluir el token en las cabeceras
         },
